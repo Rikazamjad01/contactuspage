@@ -1,7 +1,10 @@
 // app/page.tsx
 "use client";
-
-import { Player } from "@lottiefiles/react-lottie-player";
+import dynamic from "next/dynamic";
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { ssr: false }
+);
 import {
   FaInstagram,
   FaTiktok,
@@ -22,11 +25,10 @@ export default function Home() {
         <Player
           autoplay
           loop
-          src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json" // replace with your own Lottie
+          src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
           style={{ height: "300px", width: "300px" }}
         />
 
-        {/* Styled "Stay Connected" */}
         <div className="mb-5 px-6 py-3 rounded-full bg-white/70 backdrop-blur-md shadow-lg border border-white/40">
           <p className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
             Stay Connected
