@@ -2,7 +2,6 @@
 "use client";
 
 import { Player } from "@lottiefiles/react-lottie-player";
-
 import {
   FaInstagram,
   FaTiktok,
@@ -19,16 +18,20 @@ export default function Home() {
       </h1>
 
       {/* Lottie Animation Section */}
-      <div className="flex flex-col items-center justify-center flex-1">
+      <div className="flex flex-col items-center justify-center flex-1 gap-6">
         <Player
           autoplay
           loop
           src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json" // replace with your own Lottie
           style={{ height: "300px", width: "300px" }}
         />
-        <p className="text-gray-700 mt-4 text-lg md:text-xl">
-          Stay Connected
-        </p>
+
+        {/* Styled "Stay Connected" */}
+        <div className="mb-5 px-6 py-3 rounded-full bg-white/70 backdrop-blur-md shadow-lg border border-white/40">
+          <p className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
+            Stay Connected
+          </p>
+        </div>
       </div>
 
       {/* Social Links */}
