@@ -16,35 +16,41 @@ import {
 
 import ReactCountryFlag from "react-country-flag";
 import { Berkshire_Swash } from "next/font/google";
+import { Cinzel } from "next/font/google";
 
 const berkshire = Berkshire_Swash({
   subsets: ["latin"],
   weight: "400",
 });
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen bg-black p-6">
+    <main className="flex flex-col items-center justify-between min-h-screen bg-black">
       {/* Website Name */}
-      <h1 className={`${berkshire.className} text-3xl md:text-4xl font-bold text-white mt-12 flex items-center gap-5`}>
+      <h1 className={`${berkshire.className} text-3xl md:text-4xl font-bold mt-7 text-white flex items-center gap-5`}>
         MIRAAL LUXE <ReactCountryFlag countryCode="CA" svg style={{ width: "30px", height: "1em" }}/>
       </h1>
 
       {/* Website Logo */}
-      <div className="">
+      <div>
         <Image
           src="https://res.cloudinary.com/dxxymlo0o/image/upload/v1757080153/WhatsApp_Image_2025-09-05_at_18.37.51_f6686c13_kdnedl.jpg" // <-- replace with your logo path (put logo.png in public/)
           alt="Miraal Luxe Logo"
-          width={280}
-          height={180}
+          width={250}
+          height={150}
           className="object-contain"
         />
       </div>
 
       {/* Website Description */}
-      <p className="text-gray-300 mt-4 text-center text-lg md:text-xl mb-2">
+      <p className={` text-gray-300 text-center text-lg md:text-xl mb-2`}>
         All Pakistani designers wear outfit available by{" "}
-        <span className={`${berkshire.className} font-semibold text-white`}>Miraal Luxe</span>
+        <span className={`font-semibold text-white`}>Miraal Luxe</span>
       </p>
 
       {/* Lottie Animation Section */}
@@ -56,7 +62,7 @@ export default function Home() {
           style={{ height: "300px", width: "300px" }}
         /> */}
 
-        <div className="mb-5 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md shadow-lg cursor-default">
+        <div className="mb-4 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md shadow-lg cursor-default">
           <p className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400">
             Stay Connected
           </p>
